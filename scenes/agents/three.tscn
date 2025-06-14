@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://vijts8mhmttw"]
+
+[ext_resource type="Script" uid="uid://dobr676q2r1nn" path="res://scripts/agents/three.gd" id="1_hnxk5"]
+[ext_resource type="Texture2D" uid="uid://0isi2jk4iyk2" path="res://assets/Objects/Maple Tree.png" id="1_y7hnn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hnxk5"]
+radius = 7.0
+
+[node name="three" type="StaticBody2D"]
+script = ExtResource("1_hnxk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -13)
+texture = ExtResource("1_y7hnn")
+hframes = 5
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_hnxk5")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 10.0
